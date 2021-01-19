@@ -137,9 +137,14 @@ const row = Math.floor(maxIndex / strongPaequor.length);
 const col = maxIndex % strongPaequor.length;
 
 // The pair of most similar specimens
+console.log(`\nThe most similar pair of specimens:`)
 strongPaequor[row].compareDNA(strongPaequor[col]);
 
-
+// mutate the dna
+console.log(`\nSimulate a mutation on specimen ${paequor1.specimenNum}:`)
+console.log(`${paequor1.dna.join('')} (original)`)
+paequor1.mutate()
+console.log(`${paequor1.dna.join('')} (after mutation)`)
 
 
 
