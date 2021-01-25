@@ -72,7 +72,29 @@ const theVerb2 = arrays.verbs[verb2Index];
 const theNoun1 = arrays.nouns[noun1Index];
 const theNoun2 = arrays.nouns[noun2Index];
 
+// If any of the verbs is `let` add a third verb
+
+function addVerb(otherVerb) {
+    let verb = '';
+    do {
+        let verb3Index = Math.floor(Math.random() * arrays.verbs.length);
+        verb = arrays.verbs[verb3Index];
+    } while (verb === otherVerb);
+    return verb
+}
+
+if (theVerb1 === 'let'){
+    let theVerb3 = addVerb(theVerb1);
+    // modify the noun1
+    theNoun1 *= ` ${theVerb3}`
+} else if (theVerb2 === 'let') {
+    let theVerb3 = addVerb(theVerb2);
+    // modify the noun1
+    theNoun2 *= ` ${theVerb3}`
+}
+    
+
 // Assemble the message
-const theMessage = `${theStart} ${theVerb1} ${theNoun1}. You ${theVerb2} ${theNoun2}.`
+const theMessage = `${theStart} ${theVerb1} ${theNoun1}, you ${theVerb2} ${theNoun2}.`
 
 console.log(theMessage);
