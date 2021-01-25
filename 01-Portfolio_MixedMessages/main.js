@@ -26,9 +26,9 @@ rawText.nouns = fs.readFileSync(__dirname + '/NOUNS.txt', 'utf8');
 
 // Create an object to store the arrays of each component
 const arrays = {
-    start: '',
-    verbs: '',
-    nouns: ''
+    start: [],
+    verbs: [],
+    nouns: []
 }
 
 for (let key in rawText) {
@@ -76,7 +76,3 @@ const theNoun2 = arrays.nouns[noun2Index];
 const theMessage = `${theStart} ${theVerb1} ${theNoun1}. You ${theVerb2} ${theNoun2}.`
 
 console.log(theMessage);
-
-
- 
-
